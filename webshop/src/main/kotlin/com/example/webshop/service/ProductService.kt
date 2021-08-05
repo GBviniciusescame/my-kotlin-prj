@@ -2,11 +2,11 @@ package com.example.webshop.service
 
 import com.example.webshop.dto.ProductDto
 import com.example.webshop.model.Product
-import com.example.webshop.producer.ProductRepository
+import com.example.webshop.producer.KafkaProducer
 import org.springframework.stereotype.Service
 
 @Service
-class ProductService(private val repository: ProductRepository) {
+class ProductService(private val repository: KafkaProducer) {
     companion object {
         val products: Set<Product> = setOf (
             Product(id = 1, name = "Prod1", displayName = null, 10.5f, true),
@@ -24,7 +24,7 @@ class ProductService(private val repository: ProductRepository) {
 
     fun createProducts(productsDto: Set<ProductDto>) {
         for (p in productsDto) {
-            repository.create(getProduct(p.id)!!)
+            repository.createProduct(getProduct(p.id)!!)
         }
     }
 }
