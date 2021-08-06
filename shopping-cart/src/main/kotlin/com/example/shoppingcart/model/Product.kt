@@ -1,11 +1,10 @@
 package com.example.shoppingcart.model
 
-import org.hibernate.Hibernate
+import org.springframework.data.annotation.Id
+import org.springframework.data.redis.core.RedisHash
 import java.util.*
-import javax.persistence.Entity
-import javax.persistence.Id
 
-@Entity
+@RedisHash
 class Product(
     @Id
     val id: Long,
