@@ -1,6 +1,6 @@
 package com.example.shoppingcart.consumer
 
-import com.example.shoppingcart.config.KafkaConsumerConfig
+import com.example.shoppingcart.config.KafkaWebshopConsumerConfig
 import org.apache.kafka.common.serialization.Serdes
 import org.apache.kafka.streams.KafkaStreams
 import org.apache.kafka.streams.StreamsBuilder
@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service
 import java.util.Properties
 
 @Service
-class KafkaConsumer(consumerConfig: KafkaConsumerConfig) {
+class KafkaWebshopConsumer(consumerConfig: KafkaWebshopConsumerConfig) {
     private val props = Properties()
     private val builder = StreamsBuilder()
     private val shoppingCartAddStream: KStream<String, String>

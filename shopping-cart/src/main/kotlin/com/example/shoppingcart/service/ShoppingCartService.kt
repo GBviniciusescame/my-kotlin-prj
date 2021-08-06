@@ -1,15 +1,15 @@
 package com.example.shoppingcart.service
 
-import com.example.shoppingcart.consumer.KafkaConsumer
+import com.example.shoppingcart.consumer.KafkaWebshopConsumer
 import com.example.shoppingcart.model.Product
-import com.example.shoppingcart.repository.ProductRepository
+import com.example.shoppingcart.repository.ShoppingCartRepository
 import com.fasterxml.jackson.module.kotlin.jacksonObjectMapper
 import org.springframework.stereotype.Service
 
 @Service
-class ProductService(
-    kafkaConsumer: KafkaConsumer,
-    val repository: ProductRepository
+class ShoppingCartService(
+    kafkaConsumer: KafkaWebshopConsumer,
+    val repository: ShoppingCartRepository
 ) {
     init {
         val mapper = jacksonObjectMapper()

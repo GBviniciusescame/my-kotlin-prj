@@ -5,6 +5,6 @@ import org.springframework.data.repository.CrudRepository
 import org.springframework.stereotype.Repository
 
 @Repository
-interface ProductRepository : CrudRepository<Product, Long> {
+interface ShoppingCartRepository : CrudRepository<Product, Long> {
     fun findByName(name: String)
 }
